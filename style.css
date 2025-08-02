@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fluid Typography Scale */
+
+h1, .fs-h1 {
+	font-size: clamp(3rem, 1rem + 30vw, 30rem);
+}
+
+h2, .fs-h2 {
+	font-size: clamp(2.25rem, 1.618rem + 2.5282vw, 3.6405rem);
+}
+
+h3, .fs-h3 {
+	font-size: clamp(1.875rem, 1.3483rem + 2.1068vw, 3.0338rem);
+}
+
+h4, .fs-h4 {
+	font-size: clamp(1.5rem, 1.0786rem + 1.6855vw, 2.427rem);
+}
+
+h5, .fs-h5 {
+	font-size: clamp(1.25rem, 0.8989rem + 1.4045vw, 2.0225rem);
+}
+
+h6, .fs-h6 {
+	font-size: clamp(1.125rem, 0.809rem + 1.2641vw, 1.8203rem);
+}
+
+p, .fs-p {
+	font-size: clamp(0.618rem, 0.4444rem + 0.6945vw, 1rem);
+}
+
+
+
+/* Animation for the slime box */
+.button {
+    position: fixed;
+    z-index: 1000;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    cursor: pointer;
+    color: white;
+}
+
+.button-left {
+    transform: translate(-90px, -50%);
+}
+
+.button-right {
+    transform: translate(50px, -50%);
+}
+.box {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    border: 2px solid transparent;
+    height: 400px;
+    width: 400px;
+    background-image: url(slime.png);
+    background-size: auto 400%;
+    --position-top: 0;
+    background-position: 0 var(--position-top);
+    animation: Animate 0.7s steps(7) infinite;
+    position: fixed;
+    z-index: 1000;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+
+}
+.box.idle {
+    --position-top: 0%
+}
+.box.left {
+    --position-top: 200%
+}
+.box.right {
+    --position-top: 100%
+}
+@keyframes Animate {
+    to {
+        background-position: 100% var(--position-top); 
+    }
+}
+
+/* Scroll Page */
+.page {
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page:nth-of-type(odd){
+    background-color: blue;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 600vw; /*Tergantung jumlah page */
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
+    scroll-behavior: smooth;
+
+}
+
+.outer-wrapper {
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(-90deg) translateX(-100vh);
+    transform-origin: top left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Decoration */
+.decoration {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 10px solid black;
+    outline: 500px solid black;
+    border-radius: 60px;
+    pointer-events: none;
+
+}
+
+h1 {
+    color: #98f0bf;
+    z-index: 2;
+    position: absolute;
+}
+h1:before{
+    background-clip: text;
+    content: "Hello!";
+    z-index: 1;
+    position: absolute;
+    transform: skew(-64deg, 0) translate(-20%, 15%) scaleY(-0.5);
+    mask-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);
+    margin-left: 20.1%;
+    margin-top: 13.3%;
+}
+
