@@ -4,15 +4,19 @@
     box-sizing: border-box;
 }
 
+:root {
+    --page-number: 0;
+}
+
 html {
     scroll-behavior: smooth;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: "Jersey 15", sans-serif;
 }
 
 /* Fluid Typography Scale */
 
 h1, .fs-h1 {
-	font-size: clamp(3rem, 1rem + 30vw, 30rem);
+	font-size: clamp(3rem, 1rem + 40vw, 30rem);
 }
 
 h2, .fs-h2 {
@@ -98,8 +102,10 @@ p, .fs-p {
 .page {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom, #0000ff, #000066);
+    /* background: linear-gradient(to bottom, #0000ff, #000066); */
+    background: transparent;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -107,11 +113,11 @@ p, .fs-p {
 .wrapper {
     display: flex;
     flex-direction: row;
-    width: 600vw; /*Tergantung jumlah page */
+    width: var(--page-number); /*Tergantung jumlah page */
     transform: rotate(90deg) translateY(-100vh);
     transform-origin: top left;
     scroll-behavior: smooth;
-
+    background: linear-gradient(to bottom, #fff, #fff 70%, #808080);
 }
 
 .outer-wrapper {
@@ -141,15 +147,16 @@ p, .fs-p {
     background-color: transparent;
     border: 10px solid black;
     outline: 500px solid black;
+    outline-offset: -1px;
     border-radius: 60px;
     pointer-events: none;
-
+    box-shadow: inset 5px 5px 15px #0d0d0d;
 }
 
 h1 {
-    color: #98f0bf;
+    color: 121212;
     z-index: 2;
-    position: absolute;
+    position: relative;
 }
 h1:before{
     background-clip: text;
@@ -158,12 +165,27 @@ h1:before{
     position: absolute;
     transform: skew(-64deg, 0) translate(-20%, 15%) scaleY(-0.5);
     mask-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);
-    margin-left: 20.1%;
-    margin-top: 13.3%;
+    margin-left: 24.1%;
+    margin-top: 11.7%;
 }
 
+
+p {
+    color: cyan;
+    text-align: center;
+}
+
+
+/* Page Section*/
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .transition {
-    background-image: linear-gradient(to right, #0000ff, #000),linear-gradient(to bottom, #0000ff, #000066);
+    background-image: linear-gradient(to right, #fff, #000),linear-gradient(to bottom, #fff, #fff 70%, #808080);
     background-blend-mode: multiply;
     font-size: 20px;
 }
@@ -171,8 +193,19 @@ h1:before{
 .dark {
     background-image: none;
     background-color: #000;
+    color: #fff;
 }
 
+
+
+/* .tes {
+    position: sticky;
+    left: 0; 
+} */
+
+
+
+/* Animation */
 @keyframes textWave {
     0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); }
 }
@@ -181,13 +214,29 @@ h1:before{
     animation: textWave 2s ease-in-out infinite;
 }
 
-.tes {
-    position: sticky;
-    left: 0; /* distance from the top of the viewport */
-    background: yellow;
+.door {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    width: 50vh;
+    cursor: pointer;
 }
 
-p {
-    color: cyan;
-    text-align: center;
+video{
+    width: 100vh;
+    height: 50vh;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 60px;
+}
+
+.after {
+    display: none;
+}
+
+.forest {
+    background-image: url(forest.png);
+    background-size: fill;
+    background-position: bottom;
+    background-repeat: repeat-x;
 }

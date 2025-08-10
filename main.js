@@ -98,6 +98,49 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+// Function to update the page number
+function pageCounter() {
+    let count = document.querySelectorAll('.page').length;
+    document.documentElement.style.setProperty('--page-number', count*100 + 'vw');
+    console.log(`Total pages: ${count*100}`);
+}
+
+pageCounter();
 
 
+// Function to handle the door click
+function handleDoorClick1() {
+    const door = document.querySelector('.door1');
+    const doorVideo = document.querySelector('.door-video');
+    const doorText = document.querySelector('.door-text');
+    const afterPage = document.querySelectorAll('.after');
+
+    door.classList.add('open'); // Add class to trigger the animation
+    doorVideo.hidden = false;
+    doorVideo.muted = false;
+    doorVideo.currentTime = 0; 
+    doorVideo.play(); 
+    door.style.display = 'none'; 
+    door.style.visibility = 'hidden'; // Hide the door after the click
+    doorText.textContent = 'HAHAHA! WRONG DOOR!'; 
+    afterPage.forEach(el => {
+        el.classList.add('page'); // Add class to show the after page
+        el.classList.remove('after'); // Add class to show the after page
+        pageCounter(); // Update the page counter after the door is clicked
+    });
+
+};
+
+function handleDoorClick2() {
+    window.location.href = 'forest.html'; // Redirect to a new page
+};
+
+function handleDoorClick3() {
+    window.location.href = 'index.html'; // Redirect to a new page
+};
+
+// Add event listener to the door
+document.querySelector('.door1').addEventListener('click', handleDoorClick1);
+document.querySelector('.door2').addEventListener('click', handleDoorClick2);
+document.querySelector('.door3').addEventListener('click', handleDoorClick3);
 
