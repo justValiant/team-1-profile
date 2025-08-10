@@ -6,6 +6,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 /* Fluid Typography Scale */
@@ -49,6 +50,7 @@ p, .fs-p {
     transform: translate(-50%, 50%);
     cursor: pointer;
     color: white;
+    user-select: none;
 }
 
 .button-left {
@@ -96,14 +98,10 @@ p, .fs-p {
 .page {
     width: 100vw;
     height: 100vh;
-    background-color: blue;
+    background: linear-gradient(to bottom, #0000ff, #000066);
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.page:nth-of-type(odd){
-    background-color: blue;
 }
 
 .wrapper {
@@ -164,3 +162,32 @@ h1:before{
     margin-top: 13.3%;
 }
 
+.transition {
+    background-image: linear-gradient(to right, #0000ff, #000),linear-gradient(to bottom, #0000ff, #000066);
+    background-blend-mode: multiply;
+    font-size: 20px;
+}
+
+.dark {
+    background-image: none;
+    background-color: #000;
+}
+
+@keyframes textWave {
+    0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); }
+}
+        
+.textWave {
+    animation: textWave 2s ease-in-out infinite;
+}
+
+.tes {
+    position: sticky;
+    left: 0; /* distance from the top of the viewport */
+    background: yellow;
+}
+
+p {
+    color: cyan;
+    text-align: center;
+}
