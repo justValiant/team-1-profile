@@ -63,6 +63,13 @@ buttonRight.addEventListener("touchend", () => {
     clearInterval(interval);
 });
 
+// Untuk Keyboard Laptop
+document.addEventListener('keydown', (event) => {
+    if (event.key === "ArrowRight") {
+        right(); // scroll horizontal to the right
+    }
+});
+
 /*Left Button Mouse*/
 const buttonLeft = document.getElementById('left');
 buttonLeft.addEventListener("mousedown", () => {
@@ -83,3 +90,14 @@ buttonLeft.addEventListener("touchstart", () => {
 buttonLeft.addEventListener("touchend", () => {
     clearInterval(interval);
 });
+
+// Untuk Keyboard Laptop
+document.addEventListener('keydown', (event) => {
+    if (event.key === "ArrowLeft") {
+        left(); // scroll horizontal to the left
+    }
+});
+
+
+
+
