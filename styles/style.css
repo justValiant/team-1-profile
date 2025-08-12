@@ -70,7 +70,7 @@ p, .fs-p {
     border: 2px solid transparent;
     height: 400px;
     width: 400px;
-    background-image: url(slime.png);
+    background-image: url(../assets/slime.png);
     background-size: auto 400%;
     --position-top: 0;
     background-position: 0 var(--position-top);
@@ -150,7 +150,7 @@ p, .fs-p {
     outline-offset: -1px;
     border-radius: 60px;
     pointer-events: none;
-    box-shadow: inset 5px 5px 15px #0d0d0d;
+    box-shadow: inset 5px 5px 100px #000;
 }
 
 h1 {
@@ -158,7 +158,8 @@ h1 {
     z-index: 2;
     position: relative;
 }
-h1:before{
+
+.h1_hello:before{
     background-clip: text;
     content: "Hello!";
     z-index: 1;
@@ -169,6 +170,16 @@ h1:before{
     margin-top: 11.7%;
 }
 
+.h1_park:before{
+    background-clip: text;
+    content: "Park";
+    z-index: 1;
+    position: absolute;
+    transform: skew(-64deg, 0) translate(-20%, 15%) scaleY(-0.5);
+    mask-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);
+    margin-left: 25%;
+    margin-top: 13.8%;
+}
 
 p {
     color: cyan;
@@ -199,10 +210,15 @@ p {
 
 
 /* .tes {
-    position: sticky;
-    left: 0; 
+    position: fixed;
+    z-index: 1000;
+    top: 90%;
+    left: 50%;
 } */
 
+/* .special {
+    position: relative;
+} */
 
 
 /* Animation */
@@ -235,7 +251,7 @@ video{
 }
 
 .forest {
-    background-image: url(forest.png);
+    background-image: url(../assets/forest.png);
     background-size: fill;
     background-position: bottom;
     background-repeat: repeat-x;
