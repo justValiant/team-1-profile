@@ -119,11 +119,15 @@ pageCounter();
 
 // Function to handle the door click
 function handleDoorClick3() {
-    console.log('Door 3 clicked');
     window.location.href = 'index.html'; // Redirect to a new page
+};
+
+function handleDoorClick4() {
+    window.location.href = 'class.html'; // Redirect to a new page
 };
 
 // Add event listener to the door
 document.querySelector('.door3').addEventListener('click', handleDoorClick3);
+document.querySelector('.door4').addEventListener('click', handleDoorClick4);
 
 
