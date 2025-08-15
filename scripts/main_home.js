@@ -121,7 +121,7 @@ function handleDoorClick1() {
     doorVideo.play(); 
     door.style.display = 'none'; 
     door.style.visibility = 'hidden'; // Hide the door after the click
-    doorText.textContent = 'HAHAHA! WRONG DOOR!'; 
+    doorText.textContent = 'HAHAHA! GOTCHA!'; 
     afterPage.forEach(el => {
         el.classList.add('page'); // Add class to show the after page
         el.classList.remove('after'); // Add class to show the after page

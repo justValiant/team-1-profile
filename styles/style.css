@@ -208,28 +208,6 @@ p {
 }
 
 
-
-/* .tes {
-    position: fixed;
-    z-index: 1000;
-    top: 90%;
-    left: 50%;
-} */
-
-/* .special {
-    position: relative;
-} */
-
-
-/* Animation */
-@keyframes textWave {
-    0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); }
-}
-        
-.textWave {
-    animation: textWave 2s ease-in-out infinite;
-}
-
 .door {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
