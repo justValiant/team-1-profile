@@ -119,7 +119,7 @@ pageCounter();
 
 // Function to handle the door click
 function handleDoorClick3() {
-    window.location.href = 'index.html'; // Redirect to a new page
+    window.location.href = 'home.html'; // Redirect to a new page
 };
 
 function handleDoorClick4() {

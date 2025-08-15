@@ -123,7 +123,7 @@ function handleDoorClick3() {
 };
 
 function handleDoorClick4() {
-    window.location.href = 'index.html'; // Redirect to a new page
+    window.location.href = 'home.html'; // Redirect to a new page
 };
 
 // Add event listener to the door

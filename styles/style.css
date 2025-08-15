@@ -271,3 +271,59 @@ iframe {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+.profile {
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 5px solid #000;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.profile:hover {
+    transform: scale(1.1);
+}
+
+.profile_name {
+    margin-bottom: 80px;
+}
+
+.nicho {
+    background-image: url(../assets/profile/nicho.png);
+}
+
+.nicho:hover {
+    background-size: 200%;
+    background-position: -70px -250px;
+}
+
+.nathan {
+    background-image: url(../assets/profile/nathan.png);
+}
+
+.nathan:hover {
+    background-image: url(../assets/profile/mmm.png);
+    background-position: 0 -130px;
+
+}
+
+.jv {
+    background-image: url(../assets/profile/jv.png);
+}
+.wesley {
+    background-image: url(../assets/profile/wesley.png);
+    background-position: 0 -10px;
+}
+
+.wesley:hover {
+    background-image: url(../assets/profile/wesley2.png);
+    background-position: 0 0; 
+}
+
+
+.valiant {
+    background-image: url(../assets/profile/valiant.png);
+}
